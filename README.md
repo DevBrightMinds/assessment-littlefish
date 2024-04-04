@@ -1,5 +1,5 @@
 ##Introduction
-This is the app depicts the entire homepage as defined on the figma file(won't necessarily look alike, but should have similar features). Please assure that you have nodejs installed - if not download and install now
+This is app depicts the entire homepage as defined on the figma file(won't necessarily look alike, but should have similar features). Please assure that you have nodejs installed - if not download and install now
 
 ##Getting Started
 TODO:
