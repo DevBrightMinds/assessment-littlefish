@@ -1,0 +1,314 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: whitesmoke;
+    font-family: "Inter", sans-serif;
+}
+
+/* app header styling */
+header {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+header .app-header-top-layer {
+    background-color: #000000;
+    font-size: 12px;
+}
+
+header .app-header-top-layer .top-layer-content {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 10px 10px 0px 10px;
+}
+
+
+header .app-header-content {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+header .app-header-content ul li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+header .app-header-content ul li:hover {
+    color: red;
+}
+
+/* app header styling */
+
+
+section .main-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section .main-container h4 {
+    padding: 20px 10px 20px 10px;
+}
+
+section .main-container .products-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section .product-card {
+    width: 20%;
+    margin: 10px;
+    background-color: #ffffff;
+}
+
+section .product-card .product-image {
+    height: 240px;
+}
+
+section .product-card:hover {
+    background-color: antiquewhite;
+}
+
+section .product-card .product-body,
+section .product-card .product-footer,
+section .product-card .product-title {
+    padding: 10px;
+}
+
+section .product-card .product-title {
+    text-align: center;
+}
+
+section .product-card .product-rating {
+    padding: 10px;
+    color: gold;
+}
+
+section .product-card .product-rating span {
+    display: block;
+}
+
+section .product-card .product-rating span:last-child {
+    color: gray;
+    font-weight: bold;
+}
+
+section .product-card .product-body {
+    font-size: 12px;
+    text-align: center;
+    height: 405px;
+}
+
+section .product-card .product-footer {
+    border-top: 1px solid;
+    padding: 10px 10px 0px 10px !important;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+section .product-card .product-footer .product-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+section .product-card .image-background-container {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 200px;
+}
+
+section .cart-list-holder {
+    width: 50%;
+    position: absolute;
+    background: whitesmoke;
+    transform: translate(-50%, 0px);
+    z-index: 100;
+    top: 20%;
+    left: -50%;
+    transition: all .5s;
+}
+
+section .cart-list-holder .holder-body {
+    height: 360px;
+    overflow-y: auto;
+}
+
+section .cart-list-holder-active {
+    left: 50%;
+}
+
+section .cart-list-holder .holder-header span {
+    cursor: pointer;
+}
+
+section .app-backdrop {
+    width: 100%;
+    background: #33333340;
+    height: 100%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+section .backdrop-active {
+    display: block;
+}
+
+section .cart-list-holder .holder-body {
+    padding: 10px 10px 0 10px;
+}
+
+section .cart-list-holder .holder-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+    background: #ffffff;
+}
+
+.app-btn {
+    cursor: pointer;
+}
+
+.app-btn:hover {
+    color: red;
+}
+
+/* home welcome */
+.home-welcome {
+    width: 100%;
+    background: rgb(191, 148, 88);
+    color: #ffffff;
+}
+
+.home-welcome .welcome-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px 40px 40px 15px;
+}
+
+.home-welcome .about-write-earn p {
+    padding: 0;
+    margin: 0;
+}
+
+.home-welcome .terms-write-earn {
+    background: whitesmoke;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.home-welcome .terms-write-earn:hover {
+    background: #441628;
+}
+
+.home-welcome .terms-write-earn:hover span {
+    color: #ffffff;
+}
+
+.home-welcome .terms-write-earn span {
+    color: #000000;
+}
+
+/* home welcome */
+
+section .item-holder {
+    display: flex;
+    background: #ffffff;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+}
+
+section .item-holder:hover {
+    background-color: antiquewhite;
+}
+
+section .item-holder .item-image .image-background-container {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+section .item-holder .item-description p:last-child {
+    font-size: 10px;
+    padding: 0 10px 0 10px;
+}
+
+section .item-holder .item-description p:nth-child(2) {
+    color: red;
+}
+
+section .item-holder .item-description p:first-child {
+    font-weight: bolder;
+}
+
+section .item-holder .item-description p {
+    margin: 0;
+    padding: 0 10px 0 10px;
+}
+
+section .item-holder .item-description {
+    width: 80%;
+}
+
+section .item-holder .item-controls span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+section .item-holder .item-controls {
+    margin: 10px;
+    text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+    .home-welcome .terms-write-earn {
+        width: 100%;
+    }
+
+    section .main-container .products-container,
+    header .app-header-top-layer .top-layer-content {
+        display: grid;
+    }
+
+    .home-welcome .welcome-content {
+        width: 90%;
+    }
+
+    section .item-holder .item-description {
+        overflow: hidden;
+    }
+
+    section .main-container {
+        width: 90%;
+    }
+
+    section .product-card {
+        width: 100%;
+        margin: 10px 0 10px 0;
+    }
+
+    section .cart-list-holder {
+        width: 90%;
+    }
+
+}
