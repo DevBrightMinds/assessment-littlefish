@@ -72,6 +72,10 @@ section .product-card {
     background-color: #ffffff;
 }
 
+section .product-card .product-image {
+    height: 240px;
+}
+
 section .product-card:hover {
     background-color: antiquewhite;
 }
@@ -103,6 +107,7 @@ section .product-card .product-rating span:last-child {
 section .product-card .product-body {
     font-size: 12px;
     text-align: center;
+    height: 405px;
 }
 
 section .product-card .product-footer {
@@ -133,6 +138,23 @@ section .cart-list-holder {
     top: 20%;
     left: -50%;
     transition: all .5s;
+}
+
+section .cart-list-holder .holder-footer {
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: end;
+}
+
+section .cart-list-holder .holder-footer .app-btn:hover {
+    background-color: antiquewhite;
+}
+
+section .cart-list-holder .holder-footer .app-btn {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px #cccccc;
 }
 
 section .cart-list-holder .holder-body {
