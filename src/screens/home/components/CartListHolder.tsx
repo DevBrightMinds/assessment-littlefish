@@ -1,9 +1,9 @@
 import { CartItem } from "./CartItem";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GetIcon } from "../../../shared/icon/GetIcon";
-import { addToCartList, toggleCartListHolder } from "../../../utilis/redux/actions/ReduxActions";
 import { AppButton } from "../../../shared/appbtn/AppButton";
 import { useAppStorage } from "../../../shared/hooks/useAppStorage";
+import { addToCartList, toggleCartListHolder } from "../../../utilis/redux/actions/ReduxActions";
 
 export const CartListHolder: React.FC<{
     CartList: TProduct[],
@@ -12,6 +12,8 @@ export const CartListHolder: React.FC<{
 }> = ({ CartList, Status, removeItem }): JSX.Element => {
     const dispatch = useDispatch();
     const { removeCartList } = useAppStorage();
+
+    const CartProductsList: TProduct[] = useSelector((state: any) => state.allReducers.CartProductsList);
 
     const handleHolderStatus = () => {
         dispatch(toggleCartListHolder(false));
@@ -22,6 +24,17 @@ export const CartListHolder: React.FC<{
         removeCartList();
         handleHolderStatus();
     }
+
+    const getTotalPrice = () => {
+        let total = 0;
+
+        if (CartProductsList.length > 0)
+            CartProductsList?.forEach((el: TProduct) => total += el.price);
+
+
+        return total
+
+    };
 
     return <div className={!Status ? "cart-list-holder" : "cart-list-holder cart-list-holder-active"}>
         <div className="holder-header">
@@ -35,6 +48,9 @@ export const CartListHolder: React.FC<{
             })}
         </div>
         <div className="holder-footer">
+            <div className="totals">
+                <h6>Subtotal: R{getTotalPrice()}</h6>
+            </div>
             <AppButton ButtonName="Checkout" handleBtnClick={handleCheckOut} IconName="bi-basket" />
         </div>
     </div>
