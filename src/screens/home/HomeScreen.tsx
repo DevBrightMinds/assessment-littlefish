@@ -1,7 +1,3 @@
-// this is the first time actually fetching data using redux query - I usually use the standard fetch api
-// moreover, please do have a look into some of the libaries included on how apart from redux queries, I would have handled this
-// its just basic stuff - nothing fency- so, when we talk, please do note, that this is the first time fetching data using redux queries
-
 import { useEffect, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
 

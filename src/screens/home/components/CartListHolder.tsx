@@ -1,4 +1,5 @@
 import { CartItem } from "./CartItem";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetIcon } from "../../../shared/icon/GetIcon";
 import { AppButton } from "../../../shared/appbtn/AppButton";
@@ -12,6 +13,8 @@ export const CartListHolder: React.FC<{
 }> = ({ CartList, Status, removeItem }): JSX.Element => {
     const dispatch = useDispatch();
     const { removeCartList } = useAppStorage();
+
+    const [TotalPrice, setTotalPrice] = useState<number>(0);
 
     const CartProductsList: TProduct[] = useSelector((state: any) => state.allReducers.CartProductsList);
 
@@ -32,9 +35,22 @@ export const CartListHolder: React.FC<{
             CartProductsList?.forEach((el: TProduct) => total += el.price);
 
 
-        return total
+        setTotalPrice(total);
 
     };
+
+    const updatePrice = (product: TProduct, price: number, counter: number) => {
+        CartProductsList?.map((item: TProduct) => {
+            return (item.id == product.id) && (item.price = price * counter);
+        });
+
+        getTotalPrice();
+
+    }
+
+    useEffect(() => {
+        getTotalPrice();
+    }, [CartProductsList, CartList]);
 
     return <div className={!Status ? "cart-list-holder" : "cart-list-holder cart-list-holder-active"}>
         <div className="holder-header">
@@ -44,12 +60,12 @@ export const CartListHolder: React.FC<{
 
         <div className="holder-body">
             {CartList.map((item: TProduct, index) => {
-                return <CartItem Product={item} key={index} removeItem={removeItem} />
+                return <CartItem updatePrice={updatePrice} Product={item} key={index} removeItem={removeItem} />
             })}
         </div>
         <div className="holder-footer">
             <div className="totals">
-                <h6>Subtotal: R{getTotalPrice()}</h6>
+                <h6>Subtotal: R{TotalPrice.toFixed(2)}</h6>
             </div>
             <AppButton ButtonName="Checkout" handleBtnClick={handleCheckOut} IconName="bi-basket" />
         </div>

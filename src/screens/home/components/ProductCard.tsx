@@ -1,6 +1,6 @@
+import { GetIcon } from "../../../shared/icon/GetIcon";
 import { GetImage } from "../../../shared/image/GetImage";
 import { AppButton } from "../../../shared/appbtn/AppButton";
-import { GetIcon } from "../../../shared/icon/GetIcon";
 
 export const ProductCard: React.FC<{
     Product: TProduct,

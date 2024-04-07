@@ -199,8 +199,35 @@ section .cart-list-holder .holder-header {
     background: #ffffff;
 }
 
+section .cart-list-holder .quantity-controls {
+    display: flex;
+}
+
+section .cart-list-holder .quantity-controls .app-btn:hover {
+    background-color: #441628;
+}
+
+section .cart-list-holder .quantity-controls .app-btn span {
+    display: block;
+    line-height: 25px;
+    padding: 0 4px 0px 0;
+}
+
+section .cart-list-holder .quantity-controls .app-btn {
+    background-color: #000000;
+    margin: 2px;
+    padding: 2px;
+    color: #ffffff;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
 .app-btn {
     cursor: pointer;
+    text-align: center;
 }
 
 .app-btn:hover {

@@ -1,4 +1,4 @@
-type TProduct = {
+type  TProduct = {
     id: number
     title: string
     price: number
